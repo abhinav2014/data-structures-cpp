@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5813359828AA5E8E0012F209 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5813359728AA5E8E0012F209 /* main.cpp */; };
+		581335A028AA664C0012F209 /* tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5813359E28AA664C0012F209 /* tree.cpp */; };
+		58CD59D928B9EA1F001E11CD /* array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58CD59D728B9EA1F001E11CD /* array.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		5813359428AA5E8E0012F209 /* DSA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DSA; sourceTree = BUILT_PRODUCTS_DIR; };
 		5813359728AA5E8E0012F209 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		5813359E28AA664C0012F209 /* tree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tree.cpp; sourceTree = "<group>"; };
+		5813359F28AA664C0012F209 /* tree.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = tree.hpp; sourceTree = "<group>"; };
+		58CD59D728B9EA1F001E11CD /* array.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = array.cpp; sourceTree = "<group>"; };
+		58CD59D828B9EA1F001E11CD /* array.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = array.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				5813359728AA5E8E0012F209 /* main.cpp */,
+				5813359F28AA664C0012F209 /* tree.hpp */,
+				5813359E28AA664C0012F209 /* tree.cpp */,
+				58CD59D728B9EA1F001E11CD /* array.cpp */,
+				58CD59D828B9EA1F001E11CD /* array.hpp */,
 			);
 			path = DSA;
 			sourceTree = "<group>";
@@ -120,6 +130,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5813359828AA5E8E0012F209 /* main.cpp in Sources */,
+				58CD59D928B9EA1F001E11CD /* array.cpp in Sources */,
+				581335A028AA664C0012F209 /* tree.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
