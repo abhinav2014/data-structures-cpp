@@ -28,7 +28,7 @@ struct DoubleNode {
     struct DoubleNode *prev;
 };
 
-
+// MARK: - Linked list methods
 void traverseList(struct Node* n) {
     while (n != NULL) {
         printf("%d\n", n->value);
@@ -165,6 +165,36 @@ void listMethods() {
     
     // Merge two sorted lists
     callMergeList();
+    
+}
+
+// MARK: - Doubly linked list methods
+void twoSumProblem(struct DoubleNode* head, int sum) {
+    struct DoubleNode *tempHead = NULL;
+    struct DoubleNode *tail = NULL;
+    
+    tempHead = head;
+
+    cout<<"\nDoubly linked list:\n";
+    while(tempHead != NULL) {
+        cout<<tempHead->val<<"\t";
+        if(tempHead->next == NULL) {
+            tail = tempHead;
+        }
+        tempHead = tempHead->next;
+    }
+    
+    cout<<"\n2 Sum problem\n";
+    while(head != NULL && tail != NULL) {
+        if((head->val + tail->val) > sum) {
+            tail = tail->prev;
+        } else if((head->val + tail->val) < sum) {
+            head = head->next;
+        } else {
+            cout<<head->val<<"\t"<<tail->val;
+            break;
+        }
+    }
 }
 
 void doublyLinkedListMethods() {
@@ -173,16 +203,25 @@ void doublyLinkedListMethods() {
     struct DoubleNode *one = NULL;
     struct DoubleNode *two = NULL;
     struct DoubleNode *three = NULL;
-
+    struct DoubleNode *four = NULL;
+    struct DoubleNode *five = NULL;
+    struct DoubleNode *six = NULL;
+    
     /* Allocate memory */
     one = new DoubleNode();
     two = new DoubleNode();
     three = new DoubleNode();
+    four = new DoubleNode();
+    five = new DoubleNode();
+    six = new DoubleNode();
 
     /* Assign data values */
     one->val = 1;
     two->val = 2;
     three->val = 3;
+    four->val = 4;
+    five->val = 5;
+    six->val = 6;
 
     /* Connect nodes */
     one->next = two;
@@ -191,19 +230,33 @@ void doublyLinkedListMethods() {
     two->next = three;
     two->prev = one;
 
-    three->next = NULL;
+    three->next = four;
     three->prev = two;
+    
+    four->next = five;
+    four->prev = three;
+    
+    five->next = six;
+    five->prev = four;
+    
+    six->next = NULL;
+    six->prev = five;
 
     /* Save address of first node in head */
     head = one;
-    
-    
+
+    // Call Two Sum Problem
+    twoSumProblem(head, 11);
 }
 
+// MARK: - Main Function
 int main(int argc, const char * argv[]) {
     
     // Linked list operations
     listMethods();
+    
+    // Doubly Linked List Methods
+    doublyLinkedListMethods();
     
     // Tree Operations
     createTree();
