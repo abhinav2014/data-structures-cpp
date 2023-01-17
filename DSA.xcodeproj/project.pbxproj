@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5813359828AA5E8E0012F209 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5813359728AA5E8E0012F209 /* main.cpp */; };
 		581335A028AA664C0012F209 /* tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5813359E28AA664C0012F209 /* tree.cpp */; };
+		5814294828D4FFB600BE1159 /* strings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5814294628D4FFB600BE1159 /* strings.cpp */; };
 		58AC379528C9BFBC0001613B /* stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58AC379328C9BFBC0001613B /* stack.cpp */; };
 		58AC379928C9C8B30001613B /* linkedlist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58AC379728C9C8B30001613B /* linkedlist.cpp */; };
 		58CD59D928B9EA1F001E11CD /* array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58CD59D728B9EA1F001E11CD /* array.cpp */; };
@@ -31,6 +32,8 @@
 		5813359728AA5E8E0012F209 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		5813359E28AA664C0012F209 /* tree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tree.cpp; sourceTree = "<group>"; };
 		5813359F28AA664C0012F209 /* tree.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = tree.hpp; sourceTree = "<group>"; };
+		5814294628D4FFB600BE1159 /* strings.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = strings.cpp; sourceTree = "<group>"; };
+		5814294728D4FFB600BE1159 /* strings.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = strings.hpp; sourceTree = "<group>"; };
 		58AC379328C9BFBC0001613B /* stack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stack.cpp; sourceTree = "<group>"; };
 		58AC379428C9BFBC0001613B /* stack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = stack.hpp; sourceTree = "<group>"; };
 		58AC379728C9C8B30001613B /* linkedlist.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = linkedlist.cpp; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 		5813359628AA5E8E0012F209 /* DSA */ = {
 			isa = PBXGroup;
 			children = (
+				5814294528D4FFA300BE1159 /* Strings */,
 				58AC379628C9C8960001613B /* LinkedList */,
 				58AC379228C9BFAB0001613B /* Stack */,
 				5813359728AA5E8E0012F209 /* main.cpp */,
@@ -78,6 +82,15 @@
 				58CD59D828B9EA1F001E11CD /* array.hpp */,
 			);
 			path = DSA;
+			sourceTree = "<group>";
+		};
+		5814294528D4FFA300BE1159 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				5814294628D4FFB600BE1159 /* strings.cpp */,
+				5814294728D4FFB600BE1159 /* strings.hpp */,
+			);
+			path = Strings;
 			sourceTree = "<group>";
 		};
 		58AC379228C9BFAB0001613B /* Stack */ = {
@@ -129,6 +142,7 @@
 				TargetAttributes = {
 					5813359328AA5E8E0012F209 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -157,6 +171,7 @@
 			files = (
 				58AC379528C9BFBC0001613B /* stack.cpp in Sources */,
 				5813359828AA5E8E0012F209 /* main.cpp in Sources */,
+				5814294828D4FFB600BE1159 /* strings.cpp in Sources */,
 				58CD59D928B9EA1F001E11CD /* array.cpp in Sources */,
 				581335A028AA664C0012F209 /* tree.cpp in Sources */,
 				58AC379928C9C8B30001613B /* linkedlist.cpp in Sources */,
@@ -278,16 +293,31 @@
 		5813359C28AA5E8E0012F209 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		5813359D28AA5E8E0012F209 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

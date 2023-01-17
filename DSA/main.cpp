@@ -10,6 +10,7 @@
 #include "array.hpp"
 #include "stack.hpp"
 #include "linkedlist.hpp"
+#include "strings.hpp"
 
 using namespace::std;
 
@@ -19,22 +20,26 @@ void listMethods() {
     struct Node* head = NULL;
     struct Node* first = NULL;
     struct Node* second = NULL;
-    
+    struct Node* third = NULL;
+
     // Allocate memory
     head = (struct Node*)malloc(sizeof(struct Node));
     first = (struct Node*)malloc(sizeof(struct Node));
     second = (struct Node*)malloc(sizeof(struct Node));
-    
+    third = (struct Node*)malloc(sizeof(struct Node));
+
     // Give values
     head->value = 0;
     first->value = 1;
     second->value = 2;
+    third->value = 3;
     
     // Link nodes
     head->next = first;
     first->next = second;
-    second->next = NULL;
-    
+    second->next = third;
+    third->next = NULL;
+
     // Traverse the list
     traverseList(head);
     
@@ -45,6 +50,11 @@ void listMethods() {
     // Merge two sorted lists
     callMergeList();
     
+    // Swap nodes in pairs
+    swapNodesInPairs();
+    
+    // Add two numbers (Linked List)
+    addTwoNumbers();
 }
 
 // MARK: - Doubly linked list methods
@@ -103,6 +113,10 @@ void doublyLinkedListMethods() {
 // MARK: - Array functions
 void arrayMethods() {
     mergeTwoArrays();
+    
+    // Common prefix method
+    std::vector<std::string> data = {"Hello World!", "Goodbye World!"};
+    commonPrefix(data);
 }
 
 // MARK: - Stack functions

@@ -7,6 +7,7 @@
 
 #include "linkedlist.hpp"
 #include <iostream>
+#include <math.h>
 
 using namespace::std;
 
@@ -18,6 +19,14 @@ void traverseList(struct Node* n) {
     }
     printf("\n");
 }
+void traverseList(struct ListNode* n) {
+    while (n != NULL) {
+        printf("%d\n", n->val);
+        n = n->next;
+    }
+    printf("\n");
+}
+
 
 void reverseList(struct Node** n) {
     // Three pointer approach
@@ -111,6 +120,148 @@ void callMergeList() {
     second2->next = NULL;
 
     mergeTwoLists(&head1, &head2);
+}
+
+void swapNodesInPairs() {  // Not completed yet, need to check
+    struct Node* head = NULL;
+    struct Node* first = NULL;
+    struct Node* second = NULL;
+    struct Node* third = NULL;
+
+    // Allocate memory
+    head = (struct Node*)malloc(sizeof(struct Node));
+    first = (struct Node*)malloc(sizeof(struct Node));
+    second = (struct Node*)malloc(sizeof(struct Node));
+    third = (struct Node*)malloc(sizeof(struct Node));
+
+    // Give values
+    head->value = 0;
+    first->value = 1;
+    second->value = 2;
+    third->value = 3;
+    
+    // Link nodes
+    head->next = first;
+    first->next = second;
+    second->next = third;
+    third->next = NULL;
+
+    cout<<"\nswap Nodes In Pairs:\n";
+    struct Node* list = NULL;
+    struct Node* list1 = NULL;
+
+    list = head;
+    list1 = head;
+    struct Node* temp = NULL;
+    while(list1 != NULL) {
+//        cout<<list1->value;
+        
+        temp = list1->next;
+//        cout<<temp->value;
+        if (list1->next->next == NULL) {
+            list1->next = NULL;
+        } else {
+            list1->next = list1->next->next;
+        }
+        temp->next = list1;
+//        cout<<temp->value;
+        cout<<list1->value;
+
+        list1 = list1->next;
+    }
+    cout<<"\n";
+    traverseList(list);
+}
+
+void addTwoNumbers() {
+    cout<<"Add Two Numbers (Linked list):";
+    
+    struct ListNode* head1 = new ListNode();
+    struct ListNode* first1 = new ListNode();
+    struct ListNode* second1 = new ListNode();
+
+    head1->val = 2;
+    first1->val = 4;
+    second1->val = 3;
+    
+    // Link nodes
+    head1->next = first1;
+    first1->next = second1;
+    second1->next = NULL;
+
+    struct ListNode* head2 = new ListNode();
+    struct ListNode* first2 = new ListNode();
+    struct ListNode* second2 = new ListNode();
+
+    head2->val = 5;
+    first2->val = 6;
+    second2->val = 4;
+    
+    // Link nodes
+    head2->next = first2;
+    first2->next = second2;
+    second2->next = NULL;
+
+    struct ListNode* list1 = head1;
+    struct ListNode* list2 = head2;
+    
+    // find count
+    int count1 = 0;
+    while (list1 != NULL) {
+        count1 += 1;
+        list1 = list1->next;
+    }
+    printf("count1 = %d", count1);
+    
+    int count2 = 0;
+    while (list2 != NULL) {
+        count2 += 1;
+        list2 = list2->next;
+    }
+    printf("count2 = %d", count2);
+    
+    // Sum of Linked list elements
+    int num1 = 0;
+    while(count1 > 0) {
+        count1 -= 1;
+        num1 = num1 + head1->val * pow(10, count1);
+        head1 = head1->next;
+    }
+    printf("\nnum1 = %d", num1);
+
+    int num2 = 0;
+    while(count2 > 0) {
+        count2 -= 1;
+        num2 = num2 + head2->val * pow(10, count2);
+        head2 = head2->next;
+    }
+    printf("num2 = %d", num2);
+    
+    // Add two numbers
+    int sum = num1+num2;
+    cout<<"sum = "<<sum;
+    
+    // Create linked list out of the Sum
+    int mod = 0;
+    ListNode *sumList = NULL;
+    ListNode *sumListTraverse = NULL;
+    while(sum > 0) {
+        mod = sum % 10;
+        sum = sum / 10;
+        ListNode *node = new ListNode();
+        node->val = mod;
+        if (sumList == NULL) {
+            sumList = node;
+            sumListTraverse = node;
+        } else {
+            sumList->next = node;
+            sumList = sumList->next;
+        }
+    }
+    
+    // traverse Sum list
+    cout<<"\nSum List =\n";
+    traverseList(sumListTraverse);
 }
 
 // MARK: - Doubly linked list methods

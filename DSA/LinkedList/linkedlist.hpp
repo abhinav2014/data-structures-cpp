@@ -32,5 +32,7 @@ void reverseList(struct Node** n);
 ListNode* mergeTwoLists(ListNode** oneList, ListNode** twoList);
 void callMergeList();
 void twoSumProblem(struct DoubleNode* head, int sum);
+void swapNodesInPairs();
+void addTwoNumbers();
 
 #endif /* linkedlist_hpp */
